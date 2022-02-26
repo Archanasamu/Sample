@@ -1,5 +1,17 @@
 package com.sampleProj.PageObject;
 
-public class PayBill {
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.sampleProj.BaseClass.ProjectSpecificMethods;
+
+public class PayBill extends ProjectSpecificMethods{
+	
+	public PayBill(ChromeDriver driver) {
+		this.driver = driver;
+	}
+	
+	public void clickOnPay() {
+		
+	}
 
 }
