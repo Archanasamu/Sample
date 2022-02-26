@@ -3,7 +3,8 @@ package com.sampleProj.BaseClass;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -11,7 +12,7 @@ public class ProjectSpecificMethods {
 	
 	public ChromeDriver driver;
 
-	@BeforeTest
+	@BeforeMethod
 	public void preConditions(){
 		
 		WebDriverManager.chromedriver().setup();
@@ -21,5 +22,9 @@ public class ProjectSpecificMethods {
 		
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		
+	}
+	@AfterMethod
+	public void postCondition() {
+		driver.close();
 	}
 }
